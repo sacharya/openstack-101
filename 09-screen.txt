@@ -1,0 +1,24 @@
+# List screens
+screen -ls
+
+# Attach to a screen
+screen -r stack
+
+# Next screen
+ctrl+a n
+
+# Previous screen
+ctrl+a p
+
+# Stop a service
+ctrl+c
+
+# Restart the service
+Use up arrow to choose the command and press enter
+ 
+# Detach from screen
+ctrl+a d
+
+ctrl+a d
+
+nova list

@@ -1,0 +1,18 @@
+nova boot --image test-image --flavor m1.tiny MyVirshInstance
+
+nova list
+
+virsh --help
+
+sudo virsh list --all
+
+# Nova configuration
+cat /etc/nova/nova.conf
+
+# Running vm instances
+cd /opt/stack/data/nova/instances
+
+# Used for local caching of vm inages
+cd /var/lib/nova/instances/_base
+
+nova delete MyVirshInstance

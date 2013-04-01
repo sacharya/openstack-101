@@ -1,0 +1,10 @@
+cd /opt/stack/nova
+
+./run_tests.sh -h
+
+./run_tests.sh -p
+
+./run_tests.sh scheduler
+
+./run_tests.sh test_libvirt:HostStateTestCase
+
