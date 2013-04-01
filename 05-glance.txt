@@ -11,12 +11,4 @@ nova boot --image test-image --flavor m1.tiny --key_name test MyThirdInstance
 
 nova list
 
-> /home/stack/.ssh/known_hosts
-
-ipaddress=... # Get IP address from nova list
-ssh -i test.pem cirros@$ipaddress
-
-
-exit
-
 nova delete MyThirdInstance

@@ -1,0 +1,27 @@
+# Download a sample api controller 
+curl -L https://raw.github.com/sacharya/openstack-101/master/utsaservers.py >  /opt/stack/nova/nova/api/openstack/compute/contrib/utsaservers.py
+
+screen -r stack
+
+# Next screen until you reach n-api service 
+ctrl+a n
+
+# Stop the n-api service.
+ctrl+c
+
+# Restart the n-api service
+Use up arrow to choose the previous command and press ENTER
+
+# Detach from screen
+ctrl+a d
+
+nova --debug list
+
+# Grab the curl command from the debug output
+nova --debug list 2>&1 | tee my.log | grep 'curl.*detail' | cut -c6- | tee utsa_servers.sh
+
+sed -i "s/servers\\/detail/os-utsaservers/g" utsa_servers.sh
+chmod +x utsa_servers.sh
+
+# Make a call to the sample api called os-utsaservers
+./utsa_servers.sh

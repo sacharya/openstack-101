@@ -1,0 +1,23 @@
+For the purpose of this tutorial, we will be running DevStack.
+  - Ubuntu 12.04
+  - At least 2 GB of RAM
+
+For IDE, use any of your favorite Python IDE or text editor:
+  - PyCharm
+  - PyDev
+  - Komodo
+  - Emacs
+  - Vi
+
+If you are a developer, I recommend getting a VM since DevStack installs a lot of dependencies, and makes a lot of changes to your system. 
+
+There are a lot of options for getting a VM:
+
+1. Using Virtualbox
+
+2. Using VMWare Fusion
+
+3. Rackspace Cloud Server
+
+Also checkout Vagrant as it now supports all of the above.
+

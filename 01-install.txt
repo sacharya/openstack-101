@@ -24,7 +24,7 @@ SERVICE_TOKEN=admin
 SERVICE_PASSWORD=admin
 LOGFILE=/opt/stack/logs/stack.log
 SCREEN_LOGDIR=/opt/stack/logs
-VERBOSE=False
+VERBOSE=True
 EOF
 
 ./stack.sh

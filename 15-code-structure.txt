@@ -1,0 +1,54 @@
+cd /opt/stack/nova
+
+   |-bin	# Starter scripts for all nova services
+   |
+   |-doc	# Documentation
+   |
+   |-etc	# Configuration files
+   |---nova
+   |-----rootwrap.d
+   |
+   |-nova 
+   |---api	# ReST API
+   |-----ec2   
+   |-----metadata	# Provides instance specific data to the instance
+   |-----openstack  
+   |-------compute      # APIs
+   |---------contrib	# Extensions
+   |
+   |---cells	# Scaling and geographical distribution of nova clusters
+   |
+   |---compute	# Handles all processes related to vms
+   |
+   |---conductor
+   |
+   |---db	# Database interface for all services
+   |-----sqlalchemy
+   |-------migrate_repo
+   |
+   |---image	# Storage backend for images
+   |
+   |---locale	# Translations of errors and messages
+   |
+   |---network	# Network service or interface to Quantum
+   |-----quantumv2
+   |
+   |---openstack	# Reusable code between OpenStack projets
+   |-----common
+   |
+   |---scheduler	# Scheduler service to choose the appropriate  host
+   |-----filters
+   |-----weights
+   |
+   |---tests	# Unit tests
+   |
+   |---virt	# Virt drivers
+   |-----baremetal	# Exposes hardware via Nova API, uses PXE and IPMI
+   |-----hyperv
+   |-----libvirt	# qemu, kvm, lxc 
+   |-----powervm
+   |-----vmwareapi
+   |-----xenapi
+   |
+   |---volume	# Block Storage service or interface to Cinder
+

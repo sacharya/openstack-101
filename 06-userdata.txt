@@ -18,4 +18,4 @@ cat output.txt
 
 exit
 
-nova delete UserDataInstance
+nova delete MyUserDataInstance

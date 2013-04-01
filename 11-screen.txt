@@ -14,11 +14,9 @@ ctrl+a p
 ctrl+c
 
 # Restart the service
-Use up arrow to choose the command and press enter
+Use up arrow to choose the previous command and press ENTER
  
 # Detach from screen
-ctrl+a d
-
 ctrl+a d
 
 nova list

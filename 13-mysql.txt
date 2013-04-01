@@ -1,0 +1,15 @@
+cat /etc/nova/nova.conf | grep mysql
+
+mysql -u root -padmin
+
+show databases;
+
+use nova;
+
+show tables;
+
+select * from instances\G;
+
+select * from compute_nodes\G;
+
+exit
