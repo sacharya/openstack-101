@@ -5,7 +5,7 @@ echo "Hello World.  The time is now $(date -R)!" | tee /home/cirros//output.txt
 EOF
 
 # Create a new instance using the user-data
-nova boot --image test-image --flavor m1.tiny --key_name test --user_data ~/user-data.txt MyUserDataInstance
+nova boot --image cirros-0.3.1-x86_64-uec --flavor m1.tiny --key_name test --user_data ~/user-data.txt MyUserDataInstance
 
 nova list
 
@@ -15,6 +15,12 @@ ipaddress=... # Get IP address from nova list
 ssh -i test.pem cirros@$ipaddress
 
 cat output.txt
+
+curl http://169.254.169.254/
+
+http://169.254.169.254/latest
+
+curl http://169.254.169.254/latest/user-data
 
 exit
 
