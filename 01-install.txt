@@ -25,6 +25,9 @@ SERVICE_PASSWORD=admin
 LOGFILE=/opt/stack/logs/stack.log
 SCREEN_LOGDIR=/opt/stack/logs
 VERBOSE=True
+KEYSTONE_TOKEN_FORMAT=UUID
 EOF
+
+export PIP_DEFAULT_TIMEOUT=120
 
 ./stack.sh
