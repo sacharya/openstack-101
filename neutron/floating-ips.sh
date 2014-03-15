@@ -10,6 +10,8 @@ nova list
 
 neutron port-list 
 
+neutron port-list  -- --device_id=$intance_id
+
 neutron floatingip-list
 
 neutron floatingip-associate $floatingip_id $instance_port_id
