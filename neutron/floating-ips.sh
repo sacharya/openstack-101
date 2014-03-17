@@ -1,6 +1,6 @@
 neutron net-create --shared --router:external=true floating-net
 
-neutron subnet-create floating-net 10.10.10.0/24 --name floating-subnet --enable_dhcp false
+neutron subnet-create floating-net --gateway 10.10.10.1 10.10.10.0/24 --name floating-subnet --enable_dhcp false
 
 neutron net-external-list
 
