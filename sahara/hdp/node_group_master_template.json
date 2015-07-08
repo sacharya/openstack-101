@@ -1,6 +1,8 @@
 {
   "name": "hdp-master",
-  "flavor_id": "3",
+  "flavor_id": "2",
+  "plugin_name": "hdp",
+  "hadoop_version": "2.0.6",
   "node_processes": [
     "NAMENODE",
     "SECONDARY_NAMENODE",
