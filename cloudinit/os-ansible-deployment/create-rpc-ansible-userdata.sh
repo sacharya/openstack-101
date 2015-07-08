@@ -1,7 +1,7 @@
 #!/bin/bash
 
 apt-get update
-apt-get install -y vim git
+apt-get install -y vim git at
 
 cat <<'EOF' >> /root/init.sh
 #!/bin/bash
@@ -11,6 +11,7 @@ cat <<'EOF' >> /root/init.sh
   cd /root
   git clone https://github.com/sacharya/os-ansible-deployment 
   cd os-ansible-deployment
+  git checkout install-sahara-master
 
   export DEPLOY_SWIFT=no
   export RUN_TEMPEST=no
@@ -21,4 +22,4 @@ cat <<'EOF' >> /root/init.sh
 EOF
 
 chmod o+x /root/init.sh
-su stack -c "at -f /root/init.sh now + 1 minute"
+at -f /root/init.sh now + 1 minute
