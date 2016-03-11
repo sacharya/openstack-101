@@ -1,0 +1,11 @@
+cinder create 1
+
+nova volume-attach $instance_id $volume_id /dev/sdb
+
+# nova volume-attach $instance_id $volume_id auto
+
+The auto parameter indicates that Nova must attempt to automatically assign a
+device identifier to the volume within the guest. Manual allocation of specific
+device identifiers within the guest is not supported on KVM hypervisors at this
+time
+
