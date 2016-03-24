@@ -1,0 +1,12 @@
+export STACK_NAME="suda-heat-lb"
+export TEMPLATE_FILE="haproxy-heat-template.yml"
+export APP_NAME="suda-simple-app"
+export IMAGE_ID="5d4b50a6-7d86-43be-a4d2-f7a380d5da57" #Ubuntu 14.04 w/Heat Agents
+export FLAVOR_ID="t2.small"
+export KEY_NAME="suda-keypair"
+export PRIVATE_NET="aac7fa22-f9db-436d-92e6-1faf6349ae11"
+export PUBLIC_NET="8c35034f-ad74-46b7-86ae-7b20d2039a6e"
+export ALGORITHM="roundrobin"
+export BACKEND_SERVERS="192.168.101.111,192.168.101.112"
+export LISTENERS="80;80;tcp"
+
