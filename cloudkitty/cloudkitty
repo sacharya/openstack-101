@@ -22,7 +22,12 @@ cloudkitty hashmap-mapping-create -t flat -f $FIELD_ID   -v m1.medium -c 0.16
 cloudkitty hashmap-mapping-create -t flat -f $FIELD_ID   -v m1.large -c 0.32
 cloudkitty hashmap-mapping-create -t flat -f $FIELD_ID   -v m1.xlarge -c 0.64
 
+cloudkitty hashmap-mapping-list -f $FIELD_ID
+
 cloudkitty report-tenant-list
+cloudkitty-writer tenants_list
+cloudkitty storage-dataframe-list --begin 2016-04-27T12:12:12 --end 2016-04-28T12:12:12
+
 # Reported will be generated under basepath = /opt/stack/data/cloudkitty/reports 
 cloudkitty-writer generate # -t TENANT-ID
 
