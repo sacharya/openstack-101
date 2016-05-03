@@ -1,0 +1,33 @@
+# Enable CloudKitty on DevStack
+# http://docs.openstack.org/developer/cloudkitty/devstack.html
+
+source openrc admin admin admin
+
+# Enable HashMap Module
+cloudkitty module-list
+cloudkitty module-enable -n hashmap
+
+# Create hashmap compute service. Create mapping to apply rating rule
+# Instances
+cloudkitty hashmap-service-list
+cloudkitty hashmap-service-create -n compute
+SERVICE_ID=`cloudkitty hashmap-service-list | grep 'compute' | awk '{print $4}'`
+
+cloudkitty hashmap-field-create -n flavor --service-id $SERVICE_ID
+cloudkitty hashmap-field-list --service-id $SERVICE_ID
+FIELD_ID=`cloudkitty hashmap-field-list --service-id $SERVICE_ID | grep 'flavor' | awk '{print $4}'`
+cloudkitty hashmap-mapping-create -t flat -f $FIELD_ID   -v m1.tiny -c 0.02 # Price per hour
+cloudkitty hashmap-mapping-create -t flat -f $FIELD_ID   -v m1.small -c 0.08
+cloudkitty hashmap-mapping-create -t flat -f $FIELD_ID   -v m1.medium -c 0.16
+cloudkitty hashmap-mapping-create -t flat -f $FIELD_ID   -v m1.large -c 0.32
+cloudkitty hashmap-mapping-create -t flat -f $FIELD_ID   -v m1.xlarge -c 0.64
+
+cloudkitty hashmap-mapping-list -f $FIELD_ID
+
+cloudkitty report-tenant-list
+cloudkitty-writer tenants_list
+cloudkitty storage-dataframe-list --begin 2016-04-27T12:12:12 --end 2016-04-28T12:12:12
+
+# Reported will be generated under basepath = /opt/stack/data/cloudkitty/reports 
+cloudkitty-writer generate # -t TENANT-ID
+
